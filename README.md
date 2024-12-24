@@ -1,1 +1,1 @@
-# sportsRankingBook-konakalab
+# このリポジトリについて
