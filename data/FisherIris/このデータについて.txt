@@ -1,0 +1,5 @@
+このデータは以下の論文，およびMATLABのfisheriris.matの記述に基づき，
+変数名のみ著者の判断で日本語に翻訳しています．
+
+FISHER, R. A.,　THE USE OF MULTIPLE MEASUREMENTS IN TAXONOMIC PROBLEMS,　Annals of Eugenics,
+vol.7, num.2, pp.179-188, 1936
