@@ -3,22 +3,22 @@ clear
 clc
 close all
 
-cd('basketball\');
+cd('basketball/');
 execAll;
 cd('../');
 
-cd('handball\');
+cd('handball/');
 execAll;
 cd('../');
 
-cd('hockey\');
+cd('hockey/');
 execAll;
 cd('../');
 
-cd('volleyball\');
+cd('volleyball/');
 execAll;
 cd('../');
 
-cd('waterpolo\');
+cd('waterpolo/');
 execAll;
 cd('../');
