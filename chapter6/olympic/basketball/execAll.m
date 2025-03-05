@@ -1,25 +1,24 @@
+% 全種目の予測をまとめて実行する
 clear
 clc
 close all
 
-Opt.nSeasons=20000; %シミュレーション回数
-Opt.method='Elo';
-Opt.sportName='Basketball'; % 競技名
-Opt.min_pWin=0.01;  % 最小勝率
+cd('basketball/');
+execAll;
+cd('../');
 
-Opt.sexStr='M';
-%%
+cd('handball/');
+execAll;
+cd('../');
 
-calcRating;
-prediction_basketball;
-predictionByMatch;
+cd('hockey/');
+execAll;
+cd('../');
 
-%%
+cd('volleyball/');
+execAll;
+cd('../');
 
-Opt.sexStr='W';
-
-calcRating;
-prediction_basketball;
-predictionByMatch;
-
-
+cd('waterpolo/');
+execAll;
+cd('../');
