@@ -11,7 +11,7 @@ switch Opt.sexStr
 end
 
 % オリンピックの試合の読み込み
-readtable(inFileName,'Sheet','matches');
+tbl_h2h=readtable(inFileName,'Sheet','matches');
 tbl_h2h.TeamA=categorical(tbl_h2h.TeamA);
 tbl_h2h.TeamB=categorical(tbl_h2h.TeamB);
 
