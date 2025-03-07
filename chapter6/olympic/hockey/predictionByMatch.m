@@ -20,7 +20,6 @@ head(tbl_h2h)
 % ランキングはあらかじめ公式サイトなどで調査しておく
 tbl_ranking=readtable(inFileName,'Sheet','ranking');
 tbl_ranking.Team=categorical(tbl_ranking.Team);
-tbl_ranking.Ranking=cell2mat(tbl_ranking.Ranking);
 
 
 % 各対戦の予測勝率を計算する
