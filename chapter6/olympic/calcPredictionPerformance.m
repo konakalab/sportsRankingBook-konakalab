@@ -259,7 +259,8 @@ title('パリ五輪5競技10種目予測正解率')
 exportgraphics(gcf,'predictionAccuracy_Olympic2024_bySport.pdf')
 %% メダル予測性能
 
-tbl_medalPred=readtable('olympic2024MedalPrediction.xlsx');
+tbl_medalPred=readtable('olympic2024MedalPrediction.xlsx', ...
+    'VariableNamingRule','preserve');
 tbl_medalPred.Sport=categorical(tbl_medalPred.Sport);
 tbl_medalPred.Sex=categorical(tbl_medalPred.Sex);
 tbl_medalPred.Medal=categorical(tbl_medalPred.Medal);
