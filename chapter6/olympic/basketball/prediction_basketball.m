@@ -91,12 +91,18 @@ switch Opt.sexStr
 end
 exportgraphics(gca,['prediction_h2h_Olympic_2024_' Opt.sportName '_' Opt.sexStr '.png'])
 exportgraphics(gca,['prediction_h2h_Olympic_2024_' Opt.sportName '_' Opt.sexStr '.pdf'])
-outFileName=['prediction-H2H_' Opt.sexStr '_.xlsx'];
-xlswrite(outFileName,string(tbl_teams.Team), 'h2h')
-xlswrite(outFileName,string(tbl_teams.Group), 'h2h','B1')
+% outFileName=['prediction-H2H_' Opt.sexStr '_.xlsx'];
+% xlswrite(outFileName,string(tbl_teams.Team), 'h2h')
+% xlswrite(outFileName,string(tbl_teams.Group), 'h2h','B1')
+% 
+% xlswrite(outFileName,plotData, 'h2h','C1')
+% xlswrite(outFileName,string(tbl_teams.IOCCode)', 'h2h','C13')
 
-xlswrite(outFileName,plotData, 'h2h','C1')
-xlswrite(outFileName,string(tbl_teams.IOCCode)', 'h2h','C13')
+outFileName=['prediction-H2H_' Opt.sexStr '_.csv'];
+tmp=[string(tbl_teams.Team) string(tbl_teams.Group) plotData;
+    "" "" string(tbl_teams.IOCCode)']
+writematrix(tmp, outFileName)
+
 
 %% トーナメント予測
 
@@ -318,23 +324,30 @@ for k=1:Opt.nSeasons
     
 end
 
-% メダル予測
+%% メダル予測
 [C,ia,ic] = unique(medalPrediction','rows');
 a_counts = accumarray(ic,1);
 value_counts = [C, a_counts];
 [~,ind]=sort(a_counts,'descend');
 value_counts(ind(1:20),:)
-xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],...
-    string(tbl_teams.Team(value_counts(ind(1:20),1:3))),'medal','B2');
-xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],...
-    ((value_counts(ind(1:20),4)))/Opt.nSeasons,'medal','E2');
-xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
-    {'Num','Gold','Silver','Bronze','Probability'},'medal','A1');
-xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
-    (1:20)','medal','A2');
-tbl_tmp=readtable(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
-    'Sheet','medal');
+% xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],...
+%     string(tbl_teams.Team(value_counts(ind(1:20),1:3))),'medal','B2');
+% xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],...
+%     ((value_counts(ind(1:20),4)))/Opt.nSeasons,'medal','E2');
+% xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
+%     {'Num','Gold','Silver','Bronze','Probability'},'medal','A1');
+% xlswrite(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
+%     (1:20)','medal','A2');
+% tbl_tmp=readtable(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
+%     'Sheet','medal');
 
+tmp=["Num","Gold","Silver","Bronze","Probability";
+    (1:20)' ...
+    string(tbl_teams.Team(value_counts(ind(1:20),1:3))) ...
+    ((value_counts(ind(1:20),4)))/Opt.nSeasons
+    ]
+writematrix(tmp, ['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.csv' ])
+tbl_tmp=readtable(['prediction_medal_' Opt.sportName '_' Opt.sexStr '_.csv' ])
 %% 順位予測の図示
 figure
 stCounts=hist(finalStandings',[1,2,3,4,5,9])'/Opt.nSeasons
@@ -373,9 +386,14 @@ exportgraphics(gcf,['prediction_final_' Opt.sportName '_' Opt.sexStr '_' '.pdf']
 
 %%
 
-xlswrite(['prediction_final_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],stCounts,'prediction','B2');
-xlswrite(['prediction_final_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],string(tbl_teams.Team),'prediction','A2');
-xlswrite(['prediction_final_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
-    {'Gold','Silver','Bronze','SF','QF','GS'},'prediction','B1');
+% xlswrite(['prediction_final_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],stCounts,'prediction','B2');
+% xlswrite(['prediction_final_' Opt.sportName '_' Opt.sexStr '_.xlsx' ],string(tbl_teams.Team),'prediction','A2');
+% xlswrite(['prediction_final_' Opt.sportName '_' Opt.sexStr '_.xlsx' ], ...
+%     {'Gold','Silver','Bronze','SF','QF','GS'},'prediction','B1');
 
+tmp=["","Gold","Silver","Bronze","SF","QF","GS";
+    string(tbl_teams.Team) ...
+    stCounts
+    ];
+writematrix(tmp,['prediction_final_' Opt.sportName '_' Opt.sexStr '_.csv' ]);
 save(['prediction_' Opt.sexStr '_.mat'])

@@ -4,6 +4,7 @@ load(['prediction_' Opt.sexStr '_.mat']);
 
 % オリンピックの試合の読み込み
 inFileName=['matches_Olympic_' Opt.sexStr '_2024.xlsx'];
+outFileName=['matches_Olympic_' Opt.sexStr '_2024.csv'];
 
 [~,~,raw]=xlsread(inFileName,'matches');
 tbl_h2h=array2table(raw);
@@ -47,3 +48,5 @@ end
 
 writematrix(outData, inFileName,'Sheet','matches','Range','D2');
 writematrix(outDataRanking, inFileName,'Sheet','matches','Range','G2');
+tbl_tmp=readtable(inFileName);
+writetable(tbl_tmp, outFileName)
