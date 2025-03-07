@@ -6,21 +6,13 @@ load(['prediction_' Opt.sexStr '_.mat']);
 inFileName=['matches_Olympic_' Opt.sexStr '_2024.xlsx'];
 outFileName=['matches_Olympic_' Opt.sexStr '_2024.csv'];
 
-[~,~,raw]=xlsread(inFileName,'Sheet','matches');
-tbl_h2h=array2table(raw);
-tbl_h2h.Properties.VariableNames=raw(1,:);
-tbl_h2h(1,:)=[];
-tbl_h2h.Date=datetime(tbl_h2h.Date);
+tbl_h2h=readtable(inFileName,'Sheet','matches')
 tbl_h2h.TeamA=categorical(tbl_h2h.TeamA);
 tbl_h2h.TeamB=categorical(tbl_h2h.TeamB);
 
 % ランキングはあらかじめ公式サイトなどで調査しておく
-[~,~,raw]=xlsread(inFileName,'Sheet','ranking');
-tbl_ranking=array2table(raw);
-tbl_ranking.Properties.VariableNames=raw(1,:);
-tbl_ranking(1,:)=[];
+tbl_ranking=readtable(inFileName,'Sheet','ranking')
 tbl_ranking.Team=categorical(tbl_ranking.Team);
-tbl_ranking.Ranking=cell2mat(tbl_ranking.Ranking);
 
 % 各対戦の予測勝率を計算する
 outData=[];outDataRanking=[];
