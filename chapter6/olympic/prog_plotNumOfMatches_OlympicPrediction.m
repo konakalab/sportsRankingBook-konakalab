@@ -11,31 +11,31 @@ hold on;grid on;
 
 outData=[];
 
-cd('basketball\');
+cd('basketball/');
 [numMatches, numTeams, draws]=extNumMatches;
 outData=[outData;numTeams, numMatches, draws];
 plot_local
 cd('../');
 
-cd('handball\');
+cd('handball/');
 [numMatches, numTeams, draws]=extNumMatches;
 outData=[outData;numTeams, numMatches, draws];
 plot_local
 cd('../');
 
-cd('hockey\');
+cd('hockey/');
 [numMatches, numTeams, draws]=extNumMatches;
 outData=[outData;numTeams, numMatches, draws];
 plot_local
 cd('../');
 
-cd('volleyball\');
+cd('volleyball/');
 [numMatches, numTeams, draws]=extNumMatches;
 outData=[outData;numTeams, numMatches, draws];
 plot_local
 cd('../');
 
-cd('waterpolo\');
+cd('waterpolo/');
 [numMatches, numTeams, draws]=extNumMatches;
 outData=[outData;numTeams, numMatches, draws];
 plot_local

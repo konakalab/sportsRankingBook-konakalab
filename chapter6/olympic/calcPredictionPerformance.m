@@ -14,7 +14,7 @@ tbl=table();
 for tmpSportName={'basketball','handball','hockey','volleyball','waterpolo'}
     for tmpSexStr={'M','W'}
         tbl_tmp ...
-            =readtable([tmpSportName{1} '\matches_Olympic_' tmpSexStr{1} '_2024.xlsx']);
+            =readtable([tmpSportName{1} '/matches_Olympic_' tmpSexStr{1} '_2024.xlsx']);
 
         Sport=cell(size(tbl_tmp,1),1);
         SexStr=cell(size(tbl_tmp,1),1);

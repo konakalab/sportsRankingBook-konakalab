@@ -4,27 +4,27 @@ close all
 
 plotData=[];
 
-cd('basketball\');
+cd('basketball/');
 extNumOfDraws;
 plotData=[plotData;ans];
 cd('../');
 
-cd('handball\');
+cd('handball/');
 extNumOfDraws;
 plotData=[plotData;ans];
 cd('../');
 
-cd('hockey\');
+cd('hockey/');
 extNumOfDraws;
 plotData=[plotData;ans];
 cd('../');
 
-cd('volleyball\');
+cd('volleyball/');
 extNumOfDraws;
 plotData=[plotData;ans];
 cd('../');
 
-cd('waterpolo\');
+cd('waterpolo/');
 extNumOfDraws;
 plotData=[plotData;ans];
 cd('../');

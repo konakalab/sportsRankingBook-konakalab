@@ -5,23 +5,23 @@ close all
 figure;hold on;grid on;
 set(gca,'fontname','メイリオ');
 
-cd('basketball\');
+cd('basketball/');
 plot_local;
 cd('../');
 
-cd('handball\');
+cd('handball/');
 plot_local;
 cd('../');
 
-cd('hockey\');
+cd('hockey/');
 plot_local;
 cd('../');
 
-cd('volleyball\');
+cd('volleyball/');
 plot_local;
 cd('../');
 
-cd('waterpolo\');
+cd('waterpolo/');
 plot_local;
 cd('../');
 
