@@ -94,8 +94,6 @@ switch Opt.sexStr
 end
 exportgraphics(gcf,['prediction_h2h_Olympic_2024_' Opt.sportName '_' Opt.sexStr '.png']);
 exportgraphics(gcf,['prediction_h2h_Olympic_2024_' Opt.sportName '_' Opt.sexStr '.pdf']);
-tmp=(tbl_teams.ratingValues-ans(8))*mdl(2);
-sort(tbl_teams.ratingValues,'descend');
 
 % outFileName=['prediction-H2H_' Opt.sexStr '_.xlsx'];
 % xlswrite(outFileName,string(tbl_teams.Team), 'h2h');
