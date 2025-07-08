@@ -1,6 +1,11 @@
 # このリポジトリについて
+以下のリンクをクリックするとMATLAB Onlineで開くことができます （無料のMathWorksアカウントが必要です．有料のMATLABライセンスは不要です）
 
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=konakalab/sportsRankingBook-konakalab)
+
+- 無料のMATLAB Online(basic)については以下のリンク先をご参照ください．
+  https://jp.mathworks.com/products/matlab-online/matlab-online-versions.html
+
 
 ## 既知の問題点
 一部のファイルは実行時に図に警告(Warning)が重複して示される場合があります(下図)
