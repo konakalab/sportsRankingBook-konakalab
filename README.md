@@ -1,4 +1,12 @@
 # このリポジトリについて
+
+このリポジトリは著者：小中英嗣の書籍「(正式決定後に編集)」(技術評論社)の一部のプログラム(MATLABバージョン)を公開するものです．
+- MATLAB R2023bで作成しています．
+- MATLABライブスクリプト(.mlx形式)はGitHub上ではコードが表示されませんので，以下のいずれかをお試しください．
+  - ダウンロード後にローカルのMATLABでmlxファイルを開く
+  - リポジトリをMATLAB Onlineで開く(後述)
+- 書籍の図版と見た目が異なる場合があります(書籍は組版時にレイアウトを調整しています)
+
 以下のリンクをクリックするとMATLAB Onlineで開くことができます （無料のMathWorksアカウントが必要です．有料のMATLABライセンスは不要です）
 
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=konakalab/sportsRankingBook-konakalab)
