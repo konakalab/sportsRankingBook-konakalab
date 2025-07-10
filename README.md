@@ -9,7 +9,7 @@
 
 以下のリンクをクリックするとMATLAB Onlineで開くことができます．
 
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=konakalab/sportsRankingBook-konakalab){:target="_blank"}
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg){:target="_blank"}](https://matlab.mathworks.com/open/github/v1?repo=konakalab/sportsRankingBook-konakalab)
 
 - 無料のMATLAB Online(basic)については以下のリンク先をご参照ください．
   https://jp.mathworks.com/products/matlab-online/matlab-online-versions.html
