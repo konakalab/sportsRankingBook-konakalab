@@ -7,7 +7,7 @@
   - リポジトリをMATLAB Onlineで開く(後述)
 - 書籍の図版と見た目が異なる場合があります(書籍は組版時にレイアウトを調整しています)
 
-以下のリンクをクリックするとMATLAB Onlineで開くことができます （無料のMathWorksアカウントが必要です．有料のMATLABライセンスは不要です）
+以下のリンクをクリックするとMATLAB Onlineで開くことができます．
 
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=konakalab/sportsRankingBook-konakalab)
 
